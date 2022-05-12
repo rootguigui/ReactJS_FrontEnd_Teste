@@ -1,6 +1,23 @@
-@import './base/*';
-@import './components/*';
-@import './layout/*';
-@import './pages/*';
-@import './sass-utils/*';
-@import './vendors/*';
+@import './sass-utils/function';
+@import './sass-utils/helpers';
+@import './sass-utils/mixins';
+@import './sass-utils/variables';
+
+@import "./base/reset";
+@import "./base/typography";
+
+@import './components/buttons';
+@import './components/carousel';
+@import './components/cover';
+@import './components/dropdown';
+
+@import './layout/footer';
+@import './layout/form';
+@import './layout/grid';
+@import './layout/header';
+@import './layout/navigation';
+@import './layout/sidebar';
+
+@import './pages/user';
+
+

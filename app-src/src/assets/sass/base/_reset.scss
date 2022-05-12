@@ -1,0 +1,54 @@
+body, form, fieldset, ol, ul, li, h1, h2, h3, h4, h5, h6, p {
+  margin:0;
+  padding:0;
+}
+
+img {
+  border:0;
+  vertical-align: bottom;
+}
+
+html {
+  height:100%; 
+  overflow:auto;
+  overflow-y:scroll;
+}
+
+body {
+  height:100%; 
+  font:100%/1.5 Lato, sans-serif; 
+  background:$background_white;
+  color: $text_color;
+}
+
+.clear {
+  clear:both;
+  line-height:0;
+  height:0;
+  font-size:0;
+}
+
+.clearfix:after {
+  content:" "; 
+  display:block; 
+  height:0;
+  font-size:0; 
+  clear:both; 
+  visibility:hidden;
+}
+
+.clearfix {display:inline-block;}
+* html .clearfix {height:1%;}
+.clearfix {display:block;}
+ 
+a {
+  text-decoration:underline;
+  color:$color_black;
+  outline:0; 
+}
+a:visited {
+  color:$text_light_gray;
+}
+a:hover, a:focus, a:active {
+  text-decoration:none;
+}
