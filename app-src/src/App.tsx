@@ -7,10 +7,10 @@ export default () => {
   return (
     <div className="main">
       <Header/>
-      {/* <div className="container">
+      <div className="container">
         <Sidebar />
         <HOC />
-      </div> */}
+      </div>
     </div>
   );
 }

@@ -1,3 +1,42 @@
 .sidebar-content {
-  flex: 0.3 1 auto;
+  flex: 0.1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px;
+
+  left: 23px;
+  top: 153px;
+  background-color: $background_white;
+  border-radius: 6px;
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 25px 20px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    width: 80%;
+
+    & div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    & div > span {
+      margin-top: 5px;
+      margin-left: 10px;
+    }
+
+    &.active {
+      background-color: $background_active_menu;
+      color: $text_color_white;
+      gap: 37px;
+      border-radius: 6px;
+    }
+  }
 }

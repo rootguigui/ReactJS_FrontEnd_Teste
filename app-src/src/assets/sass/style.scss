@@ -1,7 +1,7 @@
+@import './sass-utils/variables';
 @import './sass-utils/function';
 @import './sass-utils/helpers';
 @import './sass-utils/mixins';
-@import './sass-utils/variables';
 
 @import "./base/reset";
 @import "./base/typography";
@@ -10,6 +10,7 @@
 @import './components/carousel';
 @import './components/cover';
 @import './components/dropdown';
+@import './components/inputs';
 
 @import './layout/footer';
 @import './layout/form';
@@ -17,6 +18,7 @@
 @import './layout/header';
 @import './layout/navigation';
 @import './layout/sidebar';
+@import './layout/table';
 
 @import './pages/user';
 

@@ -1,0 +1,28 @@
+
+table {
+  width: 100%;
+}
+
+thead > tr {
+  text-align: left;
+}
+
+tbody tr {
+  height: 96px;
+
+  & td {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+  }
+}
+
+.table-column_multiple {
+  display: flex;
+  flex-direction: column;
+
+  & span:last-child {
+    opacity: 0.7;
+  }
+}
