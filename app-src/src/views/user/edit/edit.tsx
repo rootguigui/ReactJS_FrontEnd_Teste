@@ -23,5 +23,5 @@ export const UserEdit = () => {
       </PageHeader>
       <FormUserEdit />
     </div>
-  )
+  );
 }
