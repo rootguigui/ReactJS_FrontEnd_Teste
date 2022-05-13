@@ -1,13 +1,19 @@
 import { Modal } from "./modal"
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BiLockAlt } from "react-icons/bi";
+import { useModalValue } from "../../context/modal-context";
+import { ModalTypeEnum } from "../../models/enums/modal.enum";
 
-export const ModalResetPassword = () => {
+export const ModalResetPassword: React.FC<{ showModal: boolean }> = ({ showModal }) => {
   const [show, setShow] = useState<boolean>(false);
+  const { setShowModal } = useModalValue()
 
+  useEffect(() => { 
+    setShow(showModal);
+  }, [showModal]);
+  
   return (
     <>
-      <button onClick={() => setShow(!show)}>teste</button>
       <Modal id="modal-delete-user" isVisible={show} className="modal-sm">
         <div className="text-align-center">
           <div className="mt-20 pt-20">
@@ -18,7 +24,7 @@ export const ModalResetPassword = () => {
             <p className="text-gray">Você deseja resetar a senha deste usuário?</p>
           </div>
           <div className="row">
-          <button className="btn btn-primary btn-sm" onClick={() => setShow(false)}>
+          <button className="btn btn-primary btn-sm" onClick={() => setShowModal({ show: false, name: ModalTypeEnum.ModalResetPassword })}>
             Não
           </button>
           <button className="btn btn-info btn-sm">

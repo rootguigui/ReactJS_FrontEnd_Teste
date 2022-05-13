@@ -73,9 +73,6 @@ export const UserList = () => {
 
   return (
     <div className="container-content">
-      <ModalDeleteUser/>
-      <ModalResetPassword />
-      <ModalSuccessAction />
       <PageHeader title="Usuários">
         <div className="content-input-search">
           <input type="text" className="input-search" placeholder="Buscar usuário" />

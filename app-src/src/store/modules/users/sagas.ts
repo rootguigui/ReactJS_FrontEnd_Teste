@@ -1,8 +1,9 @@
 import { all, call, put, takeLatest } from "redux-saga/effects";
 import { baseUrl } from "../../../services";
-import { ConsultUserResponse, GetAllUsersString } from "./type";
+import { ConsultUserResponse, DeleteCurrentUserString, GetAllUsersString } from "./type";
 import * as actions from './actions';
 import { IUsersListResult } from "./reducer";
+import { ActionType } from 'typesafe-actions';
 
 export function* GetAllUsers() {
   try{
@@ -22,6 +23,16 @@ export function* GetAllUsers() {
   }
 }
 
+export function* DeleteCurrentUser({ payload }: ActionType<typeof actions.deleteCurrentUser>) {
+  try{
+    yield call(baseUrl.delete, `list/${payload.id}`);
+  }
+  catch(ex) {
+    console.log(ex)
+  }
+}
+
 export default all([
-  takeLatest(GetAllUsersString, GetAllUsers)
+  takeLatest(GetAllUsersString, GetAllUsers),
+  takeLatest(DeleteCurrentUserString, DeleteCurrentUser),
 ]);

@@ -1,13 +1,19 @@
 import { Modal } from "./modal"
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FiAlertCircle } from "react-icons/fi";
+import { useModalValue } from "../../context/modal-context";
+import { ModalTypeEnum } from "../../models/enums/modal.enum";
 
-export const ModalDeleteUser = () => {
-  const [show, setShow] = useState<boolean>(false);
+export const ModalDeleteUser: React.FC<{ showModal: boolean }> = ({ showModal }) => {
+  const [show, setShow] = useState<boolean>(showModal);
+  const { setShowModal } = useModalValue()
+
+  useEffect(() => { 
+    setShow(showModal);
+  }, [showModal]);
 
   return (
     <>
-      <button onClick={() => setShow(!show)}>teste</button>
       <Modal id="modal-delete-user" isVisible={show} className="modal-sm">
         <div className="text-align-center">
           <div className="mt-20 pt-20">
@@ -18,7 +24,7 @@ export const ModalDeleteUser = () => {
             <p className="text-gray">Você deseja excluir este usuário definitvamente? Esta ação não poderá ser desfeita.</p>
           </div>
           <div className="row">
-          <button className="btn btn-primary btn-sm" onClick={() => setShow(false)}>
+          <button className="btn btn-primary btn-sm" onClick={() => setShowModal({ show: false, name: ModalTypeEnum.ModalDelete })}>
             Não
           </button>
           <button className="btn btn-info btn-sm">

@@ -12,7 +12,6 @@ export const ModalSuccessAction = () => {
 
   return (
     <>
-      <button onClick={() => setShow(!show)}>teste</button>
       <Modal id="modal-delete-user" isVisible={show} className="modal-very-sm">
         <div className="text-align-center">
           <div className="mt-20 pt-20">
