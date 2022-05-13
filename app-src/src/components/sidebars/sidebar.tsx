@@ -1,11 +1,12 @@
 import { FiUsers } from "react-icons/fi";
 import { VscChecklist } from 'react-icons/vsc';
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 export const Sidebar = () => {
   return (
     <div className="sidebar-content">
-      <div className="sidebar-content__item active">
+      <Link className="sidebar-content__item active" to="/">
         <div>
           <FiUsers size={20} />
           <span>Usuários</span>
@@ -13,7 +14,7 @@ export const Sidebar = () => {
         <div>
           <MdKeyboardArrowRight size={20} />
         </div>
-      </div>
+      </Link>
       <div className="sidebar-content__item">
         <div>
           <VscChecklist size={20} />

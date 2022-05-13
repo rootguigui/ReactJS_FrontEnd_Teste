@@ -1,5 +1,6 @@
 import React from 'react';
 import { BiSearch } from "react-icons/bi";
+import { Link } from 'react-router-dom';
 
 export const Breadcrumb: React.FC<{ title: string }> = ({ title }) => {
   return (
@@ -8,7 +9,6 @@ export const Breadcrumb: React.FC<{ title: string }> = ({ title }) => {
     </div>
   );
 }
-
 
 export const PageHeader = () => {
   return (
@@ -19,7 +19,7 @@ export const PageHeader = () => {
           <input type="text" className="input-search" placeholder="Buscar usuário" />
           <button className="btn btn-search"><BiSearch /></button>
         </div>
-        <button className="btn btn-primary">Novo usuário</button>
+        <Link to={"/create"} className="btn btn-primary">Novo usuário</Link>
       </div>
     </div>
   );

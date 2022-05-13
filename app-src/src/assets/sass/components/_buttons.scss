@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 47px;
-  color: $text_color_white;
+  color: $text_color_white !important;
   border-radius: 6px;
   cursor: pointer;
   border: none;
@@ -12,6 +12,7 @@
   left: 35px;
   right: 34px;
   top: calc(50% - 27px/2 - 0.5px);
+  text-decoration: none;
   
   &-primary {
     font-style: normal;
