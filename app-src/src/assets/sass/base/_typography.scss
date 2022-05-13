@@ -20,6 +20,21 @@ h5 {font-size:1.2em;}
 
 h6 {font-size:1.1em;}
 
-.color-alert {
-  color: $color-alert;
+.text-gray { 
+  color: $text-gray-1; 
+  font-size: 16px; 
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 19px;
+  text-align: center
+}
+.color-alert { color: $color-alert; }
+.color-danger { color: $feedback_danger; }
+.text-align-center { 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
 }

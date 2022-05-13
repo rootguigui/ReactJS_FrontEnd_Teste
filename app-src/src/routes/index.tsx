@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Routes,
   Route
@@ -8,10 +9,12 @@ import { UserList } from "../views/user/list";
 
 export const RootRoutes = () => {
    return (
-      <Routes>
-        <Route  path="/" element={<UserList />}/>
-        <Route  path="/create" element={<UserCreate />}/>
-        <Route  path="/edit" element={<UserEdit />}/>
-      </Routes>
-   )
+     <React.Fragment>
+       <Routes>
+         <Route  path="/" element={<UserList />}/>
+         <Route  path="/create" element={<UserCreate />}/>
+         <Route  path="/edit" element={<UserEdit />}/>
+       </Routes>
+     </React.Fragment>
+  )
 }

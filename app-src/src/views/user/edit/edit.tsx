@@ -7,7 +7,7 @@ export const UserEdit = () => {
   return (
     <div className="container-content">
       <PageHeader title="Editar usuário">
-        <ToggleSwitch label="Ativo" currentValue={true} />
+        <ToggleSwitch label="Ativo" currentValue={true} id={1} />
         <button className="btn btn-info">
           <AiOutlineThunderbolt />
           <p>Resetar Senha</p>

@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 interface IProps {
   label: string;
   currentValue: boolean;
+  id: number;
 }
 
-export const ToggleSwitch: React.FC<IProps>  = ({ label, currentValue }) => {
+export const ToggleSwitch: React.FC<IProps>  = ({ label, currentValue, id }) => {
   const [toggle, setToggle] = useState<boolean>(currentValue);
 
   return (

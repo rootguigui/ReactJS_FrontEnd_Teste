@@ -5,8 +5,12 @@ import { Link } from "react-router-dom";
 import { ButtonAction } from "../../components/buttons/button_action";
 import { ToggleSwitch } from "../../components/buttons/switch_button";
 import { PageHeader } from "../../components/headers/page_header";
+import { ModalDeleteUser } from "../../components/modals/modal_delete_user";
+import { ModalResetPassword } from "../../components/modals/modal_reset_password";
+import { ModalSuccessAction } from "../../components/modals/modal_success";
 import { Table } from "../../components/tables";
 import { ColumnMultipleRow } from "../../components/tables/column_multiple_row";
+import { ProfileEnum } from "../../models/enums/profile.enum";
 import { StoreState } from "../../store/createStore";
 import * as actions from '../../store/modules/users/actions';
 import { IUsersListResult } from "../../store/modules/users/reducer";
@@ -43,14 +47,18 @@ export const UserList = () => {
           Header: 'Perfil',
           accessor: 'perfil',
           width: '10%',
+          Cell: ({ cell }: { cell: any }) => {
+            const { profile  } = cell.row.original;
+            return ProfileEnum[profile]
+          }
         },
         {
           Header: 'Status',
           accessor: 'status',
           width: '10%',
           Cell: ({ cell }: { cell: any }) => {
-            const { status } = cell.row.original;
-            return <ToggleSwitch label="Ativo" currentValue={status} />
+            const { status, id } = cell.row.original;
+            return <ToggleSwitch label="Ativo" id={id} currentValue={status} />
           }
         },
         {
@@ -65,6 +73,9 @@ export const UserList = () => {
 
   return (
     <div className="container-content">
+      <ModalDeleteUser/>
+      <ModalResetPassword />
+      <ModalSuccessAction />
       <PageHeader title="Usuários">
         <div className="content-input-search">
           <input type="text" className="input-search" placeholder="Buscar usuário" />
@@ -72,7 +83,7 @@ export const UserList = () => {
         </div>
         <Link to={"/create"} className="btn btn-primary">Novo usuário</Link>
       </PageHeader>
-      <div>
+      <div className="table-container">
         <Table {...{ columns, data }} />
       </div>
     </div>
