@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { ButtonAction } from "../../components/buttons/button_action";
 import { ToggleSwitch } from "../../components/buttons/switch_button";
 import { PageHeader } from "../../components/headers/page_header";
 import { Table } from "../../components/tables";
 import { ColumnMultipleRow } from "../../components/tables/column_multiple_row";
+import { StoreState } from "../../store/createStore";
+import * as actions from '../../store/modules/users/actions';
+import { IUsersListResult } from "../../store/modules/users/reducer";
 
 export const UserList = () => {
+  const [data, setData] = useState<Array<IUsersListResult>>([]);
+  const usersState = useSelector((state: StoreState) => state.users);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(actions.getAllUsers());
+  }, []);
+
+  useEffect(() => {
+    setData(usersState.list);
+  }, [usersState.list]);
+
   const columns = React.useMemo(
     () => [
         {
@@ -57,7 +73,7 @@ export const UserList = () => {
         <Link to={"/create"} className="btn btn-primary">Novo usuário</Link>
       </PageHeader>
       <div>
-        <Table {...{ columns }} data={[{ rede: 'Drogaria Conviva', nome: 'André Gomes da Silva', email: 'gui@gmail.conm', perfil: 'Administrador', status: true }]} />
+        <Table {...{ columns, data }} />
       </div>
     </div>
   );

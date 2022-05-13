@@ -1,0 +1,28 @@
+{
+  "list": [
+    {
+      "redes": {
+        "nome": "Teste"
+      },
+      "user": {
+        "nome": "Guilherme",
+        "email": "guilherme@gmail.com",
+        "status": true,
+        "profile": 0
+      },
+      "id": 1
+    },
+    {
+      "redes": {
+        "nome": "Teste"
+      },
+      "user": {
+        "nome": "Guilherme",
+        "email": "guilherme@gmail.com",
+        "status": false,
+        "profile": 0
+      },
+      "id": 2
+    }
+  ]
+}
