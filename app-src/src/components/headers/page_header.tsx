@@ -1,25 +1,17 @@
 import React from 'react';
-import { BiSearch } from "react-icons/bi";
-import { Link } from 'react-router-dom';
+import { Breadcrumb } from './breadcrumb';
 
-export const Breadcrumb: React.FC<{ title: string }> = ({ title }) => {
-  return (
-    <div className="breadcrumb">
-      <h1 className="breadcrumb-title">{title}</h1>
-    </div>
-  );
+interface IProps {
+  title: string;
+  children: React.ReactNode
 }
 
-export const PageHeader = () => {
+export const PageHeader: React.FC<IProps> = ({ title, children }) => {
   return (
     <div className="header-page-content ">
-      <Breadcrumb title={"Usuários"} />
+      <Breadcrumb {...{ title }} />
       <div className="header-page-content__right">
-        <div className="content-input-search">
-          <input type="text" className="input-search" placeholder="Buscar usuário" />
-          <button className="btn btn-search"><BiSearch /></button>
-        </div>
-        <Link to={"/create"} className="btn btn-primary">Novo usuário</Link>
+        {children}
       </div>
     </div>
   );

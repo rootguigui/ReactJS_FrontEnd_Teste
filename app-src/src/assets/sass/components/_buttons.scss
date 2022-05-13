@@ -8,11 +8,14 @@
   border-radius: 6px;
   cursor: pointer;
   border: none;
-  width: 170px;
+  width: 200px;
   left: 35px;
   right: 34px;
   top: calc(50% - 27px/2 - 0.5px);
   text-decoration: none;
+  gap: 10px;
+
+  & p { margin-top: 18px; }
   
   &-primary {
     font-style: normal;
@@ -20,6 +23,23 @@
     line-height: 27px;
     border: 1px $color-alert;
     background-color: $color-alert;
+  }
+
+  &-info {
+    color: $text_color !important;
+    font-style: normal;
+    font-size: 17px;
+    line-height: 27px;
+    border: $border_input;
+    background-color: $background_white;
+  }
+
+  &-danger {
+    font-style: normal;
+    font-size: 17px;
+    line-height: 27px;
+    border: 1px $feedback_danger;
+    background-color: $feedback_danger;
   }
 
   &-search {

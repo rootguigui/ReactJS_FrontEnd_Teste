@@ -2,8 +2,8 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import { UserCreate } from "../views/user/create";
-import { UserEdit } from "../views/user/edit";
+import { UserCreate } from "../views/user/create/create";
+import { UserEdit } from "../views/user/edit/edit";
 import { UserList } from "../views/user/list";
 
 export const RootRoutes = () => {

@@ -1,4 +1,6 @@
 import React from "react";
+import { BiSearch } from "react-icons/bi";
+import { Link } from "react-router-dom";
 import { ButtonAction } from "../../components/buttons/button_action";
 import { ToggleSwitch } from "../../components/buttons/switch_button";
 import { PageHeader } from "../../components/headers/page_header";
@@ -47,7 +49,13 @@ export const UserList = () => {
 
   return (
     <div className="container-content">
-      <PageHeader />
+      <PageHeader title="Usuários">
+        <div className="content-input-search">
+          <input type="text" className="input-search" placeholder="Buscar usuário" />
+          <button className="btn btn-search"><BiSearch /></button>
+        </div>
+        <Link to={"/create"} className="btn btn-primary">Novo usuário</Link>
+      </PageHeader>
       <div>
         <Table {...{ columns }} data={[{ rede: 'Drogaria Conviva', nome: 'André Gomes da Silva', email: 'gui@gmail.conm', perfil: 'Administrador', status: true }]} />
       </div>
